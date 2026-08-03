@@ -14,6 +14,8 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding: 120px 20px 80px;
+    box-sizing: border-box;
 }
 .hero h1,
 .hero h2,
@@ -35,8 +37,8 @@ body {
 
 
 h1 {
-    font-size: 90px;
-    letter-spacing: 18px;
+    font-size: clamp(45px, 8vw, 90px);
+    letter-spacing: clamp(5px, 1.5vw, 18px);
     margin: 0;
     font-weight: 700;
 }
@@ -53,6 +55,7 @@ h2 {
 
 p {
     max-width: 600px;
+    margin: 20px auto;
     font-size: 18px;
     line-height: 1.8;
     color: #ccc;
@@ -85,7 +88,10 @@ p {
 
 .music,
 .about {
-    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
 }
 
 
@@ -159,8 +165,8 @@ h3 {
 }
 .profile-glitch {
     position: relative;
-    width: 320px;
-    height: 320px;
+    width: min(320px, 80vw);
+    height: min(320px, 80vw);
     animation: float 6s ease-in-out infinite;
 }
 
@@ -171,18 +177,18 @@ h3 {
     content: "";
     position: absolute;
     top: 50%;
-    width: 80px;
-    height: 120px;
+    width: 120px;
+    height: 160px;
     opacity: 0;
 
     background:
-    repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 8px,
-        white 9px,
-        transparent 10px
+    radial-gradient(
+        ellipse,
+        rgba(255,255,255,0.35),
+        transparent 70%
     );
+
+    filter: blur(8px);
 
 }
 
@@ -205,8 +211,8 @@ h3 {
 
 
 .profile-glitch img {
-    width: 320px;
-    height: 320px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 50%;
     position: relative;
@@ -491,5 +497,430 @@ h3 {
 .release-card p {
 
     color: #888;
+
+}
+@media (max-width: 600px) {
+
+    .navbar {
+        padding: 20px;
+    }
+
+
+    .nav-links a {
+        margin-left: 15px;
+        font-size: 11px;
+    }
+
+
+    .profile-glitch {
+        margin-bottom: 30px;
+    }
+
+
+    h2 {
+        font-size: 14px;
+        letter-spacing: 3px;
+    }
+
+}
+.hero-content {
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    gap:80px;
+
+}
+
+
+.artist-name h1 {
+
+    font-size:120px;
+    line-height:0.8;
+    letter-spacing:10px;
+    text-align:left;
+
+}
+.artist-name {
+
+    position:relative;
+
+    animation: name-glitch 5s infinite;
+
+}
+
+
+
+@keyframes name-glitch {
+
+
+0%,85%,100% {
+
+transform:translate(0);
+
+filter:none;
+
+}
+
+
+87% {
+
+transform:translate(-5px,2px);
+
+filter:contrast(1.5);
+
+}
+
+
+89% {
+
+transform:translate(4px,-2px);
+
+}
+
+
+}
+@media(max-width:700px){
+
+.hero-content{
+
+flex-direction:column;
+gap:40px;
+
+}
+
+
+.artist-name h1{
+
+font-size:80px;
+text-align:center;
+
+}
+
+}
+.footer {
+
+    padding: 80px 20px 40px;
+
+    text-align:center;
+
+}
+
+
+.socials {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:35px;
+
+}
+
+
+.socials a {
+
+    color:white;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    letter-spacing:3px;
+
+    opacity:0.6;
+
+    transition:0.3s;
+
+}
+
+
+.socials a:hover {
+
+    opacity:1;
+
+}
+
+
+.footer p {
+
+    margin-top:40px;
+
+    font-size:12px;
+
+    color:#666;
+
+}
+.manifesto {
+
+    position:relative;
+    width:100%;
+    height:70vh;
+    overflow:hidden;
+
+}
+
+
+.manifesto video {
+
+    width:100%;
+    height:100%;
+    object-fit:cover;
+
+    filter:
+    brightness(0.35)
+    contrast(1.2);
+
+}
+
+
+.manifesto-text {
+
+    position:absolute;
+
+    top:50%;
+    left:50%;
+
+    transform:translate(-50%,-50%);
+
+    z-index:2;
+
+}
+
+
+.manifesto-text h3 {
+
+    font-size:clamp(35px,6vw,80px);
+
+    letter-spacing:10px;
+
+    line-height:1.1;
+
+    color:white;
+
+}
+.contact{
+
+    padding:120px 20px;
+
+}
+
+.contact-text{
+
+    max-width:550px;
+    margin:30px auto;
+
+    color:#999;
+
+    line-height:1.8;
+
+}
+
+.contact-button{
+
+    display:inline-block;
+
+    margin-top:30px;
+
+    padding:15px 45px;
+
+    border:1px solid white;
+
+    color:white;
+
+    text-decoration:none;
+
+    letter-spacing:3px;
+
+    transition:.3s;
+
+}
+
+.contact-button:hover{
+
+    background:white;
+    color:black;
+
+}
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.85);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: .3s;
+
+    z-index: 999;
+
+}
+
+.modal.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+.modal-content {
+
+    background: #000;
+
+    border: 1px solid #444;
+
+    padding: 50px;
+
+    width: min(450px, 90%);
+
+    text-align: center;
+
+    animation: reveal .5s ease;
+
+}
+
+.modal-content h2 {
+
+    letter-spacing: 8px;
+
+    margin-bottom: 25px;
+
+}
+
+.modal-content p {
+
+    color: #aaa;
+
+    line-height: 1.8;
+
+}
+
+.modal-content button {
+
+    margin-top: 30px;
+
+    padding: 12px 35px;
+
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid white;
+
+    cursor: pointer;
+
+    letter-spacing: 3px;
+
+    transition: .3s;
+
+}
+
+.modal-content button:hover {
+
+    background: white;
+
+    color: black;
+
+}
+.modal {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,0.85);
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: .3s;
+
+    z-index: 999;
+
+}
+
+.modal.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+.modal-content {
+
+    background: #000;
+
+    border: 1px solid #444;
+
+    padding: 50px;
+
+    width: min(450px, 90%);
+
+    text-align: center;
+
+    animation: reveal .5s ease;
+
+}
+
+.modal-content h2 {
+
+    letter-spacing: 8px;
+
+    margin-bottom: 25px;
+
+}
+
+.modal-content p {
+
+    color: #aaa;
+
+    line-height: 1.8;
+
+}
+
+.modal-content button {
+
+    margin-top: 30px;
+
+    padding: 12px 35px;
+
+    background: transparent;
+
+    color: white;
+
+    border: 1px solid white;
+
+    cursor: pointer;
+
+    letter-spacing: 3px;
+
+    transition: .3s;
+
+}
+
+.modal-content button:hover {
+
+    background: white;
+
+    color: black;
 
 }

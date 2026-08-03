@@ -58,25 +58,44 @@
 
     <section class="hero">
 
-        <h1>BRIEZEL</h1>
-        <div class="profile-glitch">
-        <img src="assets/images/profile.png" alt="BRIEZEL official artist photo">
-    </div>
+    <div class="hero-content">
 
-        <h2>Artist | Songwriter | Producer</h2>
-
-        <p>
-            From Paraguay, creating emotional stories through
-            electropop, EDM and dark pop.
-        </p>
-
-        <div class="buttons">
-            <a href="#" target="_blank">Spotify</a>
-            <a href="#" target="_blank">Apple Music</a>
-            <a href="#" target="_blank">Instagram</a>
+        <div class="artist-name">
+            <h1>
+                BRI<br>
+                EZEL
+            </h1>
         </div>
 
-    </section>
+
+        <div class="profile-glitch">
+
+            <img src="assets/images/profile.png" 
+            alt="BRIEZEL official artist photo">
+
+        </div>
+
+    </div>
+
+
+    <h2>Artist | Songwriter | Producer</h2>
+
+    <p>
+        From Paraguay, creating emotional stories through
+        electropop, EDM and dark pop.
+    </p>
+
+
+    <div class="buttons">
+        <a href="https://open.spotify.com/intl-es/artist/04ak3zCl6KD2yc0fu7ZIsF?si=nUQIgUb-T8-4Y-I-zP4Vqw">Spotify</a>
+        <a href="https://music.apple.com/es/artist/briezel/1837868794">Apple Music</a>
+        <a href="https://www.deezer.com/en/artist/344473671">Deezer</a>
+        <a href="https://music.amazon.com/artists/B0FPR9HVK2/briezel">Amazon Music</a>
+        <a href="https://tidal.com/artist/66454801">Tidal</a>
+        <a href="https://on.soundcloud.com/A0isoNSOy2CyyNs3mZ">Soundcloud</a>
+    </div>
+
+</section>
 
 
     <section class="music" id="music">
@@ -96,8 +115,11 @@
             <p>
                 Single · 2026
             </p>
+            <p class="release-description">
+    A story about surviving the darkest nights, finding strength through pain, and choosing to keep dancing.
+</p>
 
-            <a href="#" target="_blank">
+            <a href="https://open.spotify.com/intl-es/track/2Fg1GO76SIsvHLZCgTAwQB?si=d18bb690bce94236" target="_blank">
                 Listen Now
             </a>
 
@@ -111,10 +133,13 @@
             <h4>Reborn</h4>
 
             <p>
-                Single · 2026
+                Single · 2025
             </p>
+            <p class="release-description">
+    A journey of letting go of my past, embracing every new part of myself, and finding the strength to be reborn.
+</p>
 
-            <a href="#" target="_blank">
+            <a href="https://open.spotify.com/intl-es/track/4fiGZzojk9g2dCu4jDKhLv?si=55c6f685a74640c7" target="_blank">
                 Listen Now
             </a>
 
@@ -123,7 +148,23 @@
 
     </div>
 
+<section class="manifesto">
 
+    <video autoplay muted loop playsinline>
+        <source src="assets/images/monster.mp4" type="video/mp4">
+    </video>
+
+
+    <div class="manifesto-text">
+
+        <h3>
+            BE THE MONSTER<br>
+            TO CREATE
+        </h3>
+
+    </div>
+
+</section>
 </section>
 
 
@@ -139,7 +180,94 @@
         </p>
 
     </section>
+    <section class="contact" id="contact">
 
+    <h3>Contact</h3>
 
+    <p class="contact-text">
+        Let's create something together.
+        <br><br>
+        For bookings, collaborations,
+        press inquiries or business opportunities.
+    </p>
+
+    <a class="contact-button"
+       href="briezel.contact@gmail.com">
+        Send an Email
+    </a>
+
+</section>
+
+<footer class="footer">
+
+    <div class="socials">
+
+        <a href="https://www.instagram.com/heybzie/" target="_blank">
+            Instagram
+        </a>
+
+        <a href="https://www.youtube.com/@BriezelOfficial" target="_blank">
+            YouTube
+        </a>
+
+        <a href="#" id="tiktok-link">TikTok</a>
+
+    </div>
+
+    <p>
+        © 2026 BRIEZEL
+    </p>
+
+</footer>
+<div class="modal" id="tiktok-modal">
+
+    <div class="modal-content">
+
+        <h2>SIGNAL LOST</h2>
+
+        <p>
+            The algorithm hasn't found BRIEZEL yet.
+            <br><br>
+            Transmission will resume soon.
+        </p>
+
+        <button id="close-modal">
+            Close
+        </button>
+
+    </div>
+
+</div>
+<script>
+
+const tiktok = document.getElementById("tiktok-link");
+const modal = document.getElementById("tiktok-modal");
+const close = document.getElementById("close-modal");
+
+tiktok.addEventListener("click", function(e){
+
+    e.preventDefault();
+
+    modal.classList.add("active");
+
+});
+
+close.addEventListener("click", function(){
+
+    modal.classList.remove("active");
+
+});
+
+modal.addEventListener("click", function(e){
+
+    if(e.target === modal){
+
+        modal.classList.remove("active");
+
+    }
+
+});
+
+</script>
 </body>
 </html>
